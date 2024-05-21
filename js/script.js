@@ -32,9 +32,26 @@ createApp({
     data() {
         return {
             // ho assegnato l'array di slides ai dati dell'app
-            slides: slides,
-            currentIndex: 0
-        }
-    }
+            
+            currentIndex: 0,
+            slides: slides
+            
+            
+            
+        };
+    },
+    // metodi per cambiare immagini
+    methods: {
+        nextImage(){
+            if (this.currentIndex < this.slides.length - 1) {
+                this.currentIndex++;
+            }
+        },
+        prevImage(){
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+            } 
+        },
+    },
     // monto l'app sull'elemento con id app
 }).mount('#app')
